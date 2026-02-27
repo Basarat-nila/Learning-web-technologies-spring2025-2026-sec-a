@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3</title>
+</head>
+<body>
+    <form>
+        <fieldset style="width: 250px;">
+            <legend>Gender</legend>
+            <input type="radio" name="Gender" value="male" id="male"> Male
+            <input type="radio" name="Gender" value="female" id="female"> Female
+            <input type="radio" name="Gender" value="other" id="other"> Other
+        </fieldset> <br>
+        <p id="msg" style="color:red;"></p>
+        <input type="button" value="Submit" id="submitBtn">
+    </form>
 
+<script>
+
+    
+document.getElementById("submitBtn").addEventListener("click", validGender);
+
+function validGender() {
+    let msg = document.getElementById("msg");
+
+    let male = document.getElementById("male").checked;
+    let female = document.getElementById("female").checked;
+    let other = document.getElementById("other").checked;
+
+    if(!male && !female && !other) {
+        msg.innerHTML = "Please, select at least one option!";
+    } else {
+        msg.innerHTML = "Sucessfully submitted!";
+    }
+}
+
+</script>
+</body>
+</html>
