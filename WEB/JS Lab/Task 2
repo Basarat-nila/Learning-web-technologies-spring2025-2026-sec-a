@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-2</title>
+</head>
+<body>
+    
+<label for="email">Email:</label> <br> <br>
+<input type="email" name="email" id="email"> <br>
+<p id="msg" style="color:red;"></p> <br>
+<input type="button" value="Submit" id="SubmitButton"> <br>
 
+<script>
+
+document.getElementById("SubmitButton") .addEventListener ("click",validateEmail);
+
+
+function validateEmail()
+{  
+    let email = document.getElementById("email").value;
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
+    let msg = document.getElementById("msg");
+
+if(email== "")
+{
+
+   msg.innerHTML= "Please, fill the input field!";
+   return false;
+}
+
+else if(!pattern.test(email))
+{
+
+msg.innerHTML="Please, enter a valid email address!";
+return false;
+
+}
+
+else{
+
+msg.innerHTML= "valid email..";
+return true;
+
+}
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>
