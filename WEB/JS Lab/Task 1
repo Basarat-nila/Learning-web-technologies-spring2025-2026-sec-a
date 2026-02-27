@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question-1</title>
+</head>
+<body>
 
+<label for="name">Name:</label> <br><br>
+<input type="text" id="name"> <br>
+<p id="msg" style="color:red;"></p> <br>
+<input type="button" value="Submit" onclick="FillName()">
+
+<script>
+
+function FillName(){
+
+    let name = document.getElementById("name").value.trim();
+    let msg = document.getElementById("msg");
+
+  
+    if(name == ""){
+        msg.innerHTML = "Please, fill the name!";
+        return false;
+    }
+
+     let pattern = /^[A-Za-z][A-Za-z.\- ]*$/;
+
+    if(!pattern.test(name)){
+        msg.innerHTML = "Name must start with a letter and contain only letters, dot(.) or dash(-)!";
+        return false;
+    }
+
+
+    let words = name.split(" ");
+    if(words.length < 2){
+        msg.innerHTML = "Name contains at least two words!";
+        return false;
+    }
+
+   
+    else{
+         msg.innerHTML = "Valid name..";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
